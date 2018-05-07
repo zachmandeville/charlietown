@@ -27,7 +27,7 @@ MVP, on localhost
 
 MVP, devside
 
-* [ ] **As a dev working on the site,  I can confirm I have a 'hello world', that uses React and Redux, accessible on localhost.**
+* [X] **As a dev working on the site,  I can confirm I have a 'hello world', that uses React and Redux, accessible on localhost.**
 * [ ] **As a dev building a database, I can consult an api to better understand the tables needed and how they should be structured.**
 * [ ] **As a dev wanting to work well with others, I make many small commits on clearly named branches that are merged at smart times to master.  In this way I continually maintain a working app and have a clear process for how I got there.**
 
