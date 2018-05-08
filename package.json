@@ -4,10 +4,16 @@
   "description": "A site to see pictures of that good cat Charlie",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "browserify index.js -t babelify -p tinyify > bundle.js",
-    "watch": "watchify index.js -t babelify -p tinyify -o bundle.js",
-    "start": "budo index.js:bundle.js --live --open -- -t babelify"
+    "postinstall": "webpack",
+    "dev": "nodemon --watch server & webpack --watch",
+    "start": "node server/index",
+    "test": "jest",
+    "watch": "nodemon -e js,jsx -x npm test",
+    "h:deploy": "git push heroku master",
+    "h:migrate": "heroku run knex migrate:latest",
+    "h:rollback": "heroku run knex migrate:rollback",
+    "h:seed": "heroku run knex seed:run",
+    "knex": "knex"
   },
   "repository": {
     "type": "git",
@@ -27,6 +33,7 @@
     "babelify": "^8.0.0",
     "browserify": "^16.2.0",
     "budo": "^11.2.0",
+    "express": "^4.16.3",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-redux": "^5.0.7",
@@ -36,6 +43,11 @@
     "watchify": "^3.11.0"
   },
   "dependencies": {
-    "knex": "^0.14.6"
+    "body-parser": "^1.18.2",
+    "knex": "^0.14.6",
+    "nodemon": "^1.17.4",
+    "redux-thunk": "^2.2.0",
+    "webpack": "^4.8.1",
+    "webpack-dev-server": "^3.1.4"
   }
 }
